@@ -1,0 +1,74 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.7vh;
+    color: white;
+}
+
+h1, h3
+{
+    margin-top: 5vh;
+    margin-left: 5vh;
+}
+
+table
+{
+    position: absolute;
+    top: 25vh;
+    left: 5vw;
+    width: 90vw;
+    border-collapse: collapse;
+}
+
+thead
+{
+    background-color: rgba(255,255,255,0.3);
+}
+
+th
+{
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 2vh;
+    text-align: left;
+}
+
+tr
+{
+    width: 75vw;
+    border-bottom: 0.2vh solid rgba(255,255,255,0.1);
+}
+
+td
+{
+    width: 25vw;
+    padding: 2vh;
+}
+
+a
+{
+    text-decoration: none;
+    color: white;
+}
+
+::-webkit-scrollbar
+{
+    width: 0.5vw;
+}
+
+
+::-webkit-scrollbar-track
+{
+    background: #25b7c4;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgba(255,255,255,0.3);
+    border-radius: 0.5vh;
+}
