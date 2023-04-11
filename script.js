@@ -17,11 +17,22 @@ function getAndDisplayData()
             let nick = document.createElement("td");
             let discord = document.createElement("td");
             let license = document.createElement("td");
+            let licenseText = document.createElement("p");
             let discordLink = document.createElement("a");
+            license.appendChild(licenseText);
             discord.appendChild(discordLink);
 
             nick.innerText = player.name;
-            license.innerText = player.identifiers.find(id => id.startsWith("license:")).substr(8);
+            let playerLicense = player.identifiers.find(id => id.startsWith("license:")).substr(8);
+            licenseText.innerText = playerLicense;
+            licenseText.onclick = function()
+            {
+                navigator.clipboard.writeText(playerLicense);
+                $('#copyTooltip').fadeIn('slow', function()
+                {
+                    $('#copyTooltip').delay(500).fadeOut('slow');
+                });
+            }
             let discordID = player.identifiers.find(id => id.startsWith("discord:"));
             discordLink.innerText = discordID ? discordID.substr(8) : "Not Linked";
             if (discordID && discordID != "Not Linked")
@@ -38,5 +49,6 @@ function getAndDisplayData()
     }).catch(error => console.log(error));
 }
 
+$('#copyTooltip').hide();
 getAndDisplayData()
 setInterval(getAndDisplayData, 10000);
